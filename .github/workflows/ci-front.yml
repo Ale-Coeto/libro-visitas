@@ -10,6 +10,8 @@ jobs:
   build:
     name: Build and Lint
     runs-on: ubuntu-latest
+    env:
+        NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
     steps:
     - name: Checkout
