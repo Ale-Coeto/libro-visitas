@@ -26,7 +26,7 @@ Una aplicación donde los usuarios pueden:
 ### Frontend
 
 ```bash
-cd frontend/myapp
+cd frontend/my-app
 npm install
 npm run dev
 ```
