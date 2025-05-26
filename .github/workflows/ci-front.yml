@@ -23,16 +23,16 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
-        cache-dependency-path: frontend/Libro-digital/package-lock.json
+        cache-dependency-path: frontend/my-app/package-lock.json
 
     - name: Install dependencies
-      working-directory: frontend/Libro-digital
+      working-directory: frontend/my-app
       run: npm install --include=optional sharp
 
     - name: Run lint
-      working-directory: frontend/Libro-digital
+      working-directory: frontend/my-app
       run: npm run lint
 
     - name: Run build
-      working-directory: frontend/Libro-digital
+      working-directory: frontend/my-app
       run: npm run build
