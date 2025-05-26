@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const MessageService = require('../services/MessageService');
-const MessageController = require('../controllers/MessageController');
+const MessageService = require('../services/MessageServices');
+const MessageController = require('../controllers/MessageControllers');
 const MessageHandlers = require('../handlers/MessageHandlers');
 
 const service = new MessageService();
