@@ -17,10 +17,9 @@ class MessageController {
     if (!nombre || !mensaje) {
       return res.status(400).json({ error: 'Faltan campos' });
     }
-
     try {
-      const created = await this.service.addMessage(nombre, mensaje);
-      res.status(201).json(created);
+      const result = await this.service.addMessage(nombre, mensaje);
+      res.status(201).json(result);
     } catch (err) {
       res.status(500).json({ error: err.message });
     }

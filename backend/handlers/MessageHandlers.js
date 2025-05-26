@@ -4,11 +4,11 @@ class MessageHandlers {
   }
 
   async getMessages(req, res) {
-    this.controller.getMessages(res); // no req needed here
+    this.controller.getMessages(res);
   }
 
   async postMessage(req, res) {
-    this.controller.postMessage(req.body, res); // pass just the data
+    this.controller.postMessage(req.body, res);
   }
 }
 
