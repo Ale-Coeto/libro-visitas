@@ -1,0 +1,38 @@
+name: ci
+
+on: 
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  build:
+    name: Build and Lint
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: frontend/Libro-digital/package-lock.json
+
+    - name: Install dependencies
+      working-directory: frontend/Libro-digital
+      run: npm install --include=optional sharp
+
+    - name: Run lint
+      working-directory: frontend/Libro-digital
+      run: npm run lint
+
+    - name: Run build
+      working-directory: frontend/Libro-digital
+      run: npm run build
