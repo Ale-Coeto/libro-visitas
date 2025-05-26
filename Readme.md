@@ -9,6 +9,7 @@
 | Miguel     | 3      |
 | Alejandra  | 4      |
 | Monica     | 5      |
+| Santiago   | comodin|
 
 ---
 
