@@ -5,7 +5,7 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY
 class MessageService {
   async getAllMessages() {
     const { data, error } = await supabase
-      .from('libro_visitas')
+      .from('mensajes')
       .select('*')
       .order('fecha', { ascending: false });
 
@@ -15,7 +15,7 @@ class MessageService {
 
   async addMessage(nombre, mensaje) {
     const { data, error } = await supabase
-      .from('libro_visitas')
+      .from('mensajes')
       .insert([{ nombre, mensaje }])
       .select();
 
