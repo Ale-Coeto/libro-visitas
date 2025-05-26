@@ -11,10 +11,11 @@ export function useMessages() {
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch('https://libro-visitas-production.up.railway.app/api/messages')
+      const res = await fetch(`${apiUrl}/messages`)
       if (!res.ok) throw new Error('Error al obtener los mensajes')
       const data = await res.json()
       setMessages(data)
